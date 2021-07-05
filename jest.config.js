@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/ngshop', '<rootDir>/apps/admin'],
+  projects: [
+    '<rootDir>/apps/ngshop',
+    '<rootDir>/apps/admin',
+    '<rootDir>/libs/ui',
+  ],
 };
