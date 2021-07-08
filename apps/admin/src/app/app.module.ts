@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
-import { Table, TableModule } from 'primeng/table';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +11,8 @@ import { ShellComponent } from './shared/shell/shell.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriesService } from '@bluebit/products';
 
 const UX_MODULE = [CardModule, ToolbarModule, ButtonModule, TableModule];
 
@@ -41,10 +43,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     ...UX_MODULE,
   ],
-  providers: [],
+  providers: [CategoriesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
