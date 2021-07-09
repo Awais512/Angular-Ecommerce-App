@@ -13,8 +13,16 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesService } from '@bluebit/products';
+import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
+import { InputTextModule } from 'primeng/inputtext';
 
-const UX_MODULE = [CardModule, ToolbarModule, ButtonModule, TableModule];
+const UX_MODULE = [
+  CardModule,
+  ToolbarModule,
+  ButtonModule,
+  TableModule,
+  InputTextModule,
+];
 
 const routes: Routes = [
   {
@@ -29,6 +37,10 @@ const routes: Routes = [
         path: 'categories',
         component: CategoriesListComponent,
       },
+      {
+        path: 'categories/form',
+        component: CategoriesFormComponent,
+      },
     ],
   },
 ];
@@ -40,6 +52,7 @@ const routes: Routes = [
     DashboardComponent,
     SidebarComponent,
     CategoriesListComponent,
+    CategoriesFormComponent,
   ],
   imports: [
     BrowserModule,
