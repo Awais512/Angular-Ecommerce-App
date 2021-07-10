@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriesService } from '@bluebit/products';
 import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const UX_MODULE = [
   CardModule,
@@ -57,6 +58,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     ...UX_MODULE,
   ],
